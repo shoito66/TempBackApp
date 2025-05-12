@@ -174,7 +174,7 @@ ILogger log)
                             int result = command.ExecuteNonQuery();
 
                             //レスポンス用にJSONオブジェクトに格納
-                            JObject jsonObj = new JObject { ["result"] = $"{result}行挿入されました" };
+                            JObject jsonObj = new JObject { ["result"] = $"{result.ToString().Replace("}", "}}")}行挿入されました" };
 
                             //JSONオブジェクトを文字列に変換
                             responseMessage = JsonConvert.SerializeObject(jsonObj, Formatting.None);
